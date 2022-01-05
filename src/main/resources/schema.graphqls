@@ -1,0 +1,31 @@
+scalar Date
+
+type Query {
+    stockDetail(symbol: String): StockDetail
+    anotherStockDetail(symbol: String): StockDetail
+}
+
+type StockDetail {
+    symbol: String,
+    name: String,
+    marketCap: String
+}
+
+type Mutation {
+    addStock(request: StockAdd!): StockPrice
+}
+
+input StockAdd {
+    symbol: String
+    price: String
+}
+
+type StockPrice {
+    symbol: String
+    price: String
+    timestamp: Date
+}
+
+type Subscription {
+    stockPrice(symbol: String): StockPrice
+}
