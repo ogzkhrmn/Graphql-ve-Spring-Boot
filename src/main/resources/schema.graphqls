@@ -17,7 +17,7 @@ type Mutation {
 
 input StockAdd {
     symbol: String!
-    price: String!
+    price: Float!
 }
 
 type StockPrice {
